@@ -40,8 +40,10 @@
     <Compile Include="Entities\HtmlEntityTokenizer.cs" />
     <Compile Include="Entities\Token.cs" />
     <Compile Include="Entities\TokenType.cs" />
+    <Compile Include="Export\OpmlExporter.cs" />
     <Compile Include="Feed.cs" />
     <Compile Include="Folder.cs" />
+    <Compile Include="Import\OpmlImporter.cs" />
     <Compile Include="IRSSManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
