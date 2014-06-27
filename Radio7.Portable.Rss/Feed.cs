@@ -123,7 +123,8 @@ namespace Radio7.Portable.Rss
                                 select new Item(link.Value,
                                                 encoded == null ? "no description found..." : encoded.Value,
                                                 WebUtility.HtmlDecode(title.Value),
-                                                pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value)).ToList();
+                                                pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value,
+                                                f.Elements().GetMedia())).ToList();
                     }
                 }
 
@@ -140,7 +141,8 @@ namespace Radio7.Portable.Rss
                             select new Item(link.Value,
                                             description == null ? "no description found..." : description.Value,
                                            WebUtility.HtmlDecode(title.Value),
-                                            pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value)).ToList();
+                                            pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value,
+                                            f.Elements().GetMedia())).ToList();
             }
             return null;
         }
@@ -198,7 +200,8 @@ namespace Radio7.Portable.Rss
                     select new Item(useIdForHref ? id.Value : link.Attribute("href").Value,
                                     content == null ? "no description found..." : content.Value,
                                     WebUtility.HtmlDecode(title.Value),
-                                    pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value)).ToList();
+                                    pubDate == null ? new DateTime().ToString(CultureInfo.InvariantCulture) : pubDate.Value,
+                                    f.Elements().GetMedia())).ToList();
         }
 
         private void GetXml(Uri feedUri)
